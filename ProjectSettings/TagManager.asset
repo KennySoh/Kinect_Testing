@@ -7,6 +7,13 @@ TagManager:
   - flag
   - torch
   - test_tag
+  - Piano_box
+  - Guitar_box
+  - Start_box
+  - Violin_box
+  - Drum_box
+  - lfh
+  - rfh
   layers:
   - Default
   - TransparentFX
