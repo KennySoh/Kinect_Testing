@@ -28,8 +28,8 @@ public class Gesture_control2 : MonoBehaviour,KinectGestures.GestureListenerInte
 
 		if(gesture == KinectGestures.Gestures.SwipeRight)
 		{
-			text.text = "用户 SwipeRight 手势";
-			print("用户 SwipeRight 手势");
+			text.text = "SwipeRight";
+			print("SwipeRight");
 		}
 
 		return true;
@@ -42,14 +42,14 @@ public class Gesture_control2 : MonoBehaviour,KinectGestures.GestureListenerInte
 
 	public void UserDetected(long userId, int userIndex)
 	{
-		text.text = "检测到手势";
-		print("检测到手势");
+		text.text = "Detected Gesture";
+		print("Detected Gesture");
 	}
 
 	public void UserLost(long userId, int userIndex)
 	{
-		text.text = "手离开了";
-		print("手离开了");
+		text.text = "Hand off";
+		print("Hand off");
 	}
 
 
