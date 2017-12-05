@@ -5,13 +5,13 @@ using UnityEngine.UI;
 public class Start_Box : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		if(col.tag=="rfh"||col.tag=="lfh"){
-			GameObject.FindGameObjectWithTag ("test_tag").GetComponent<Text> ().text = "Start game!";
-			print ("Enter");
+			print ("Start Game!");
 		}
 	}
 
 	void OnTriggerExit(Collider col) {
-		GameObject.FindGameObjectWithTag ("test_tag").GetComponent<Text> ().text = "Hand out!";
+		GameObject.FindGameObjectWithTag ("test_tag").GetComponent<Text> ().text = "Game Start!";
+		GameManager.start_game = true;
 		print ("Exit");
 	}
 }

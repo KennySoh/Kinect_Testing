@@ -113,34 +113,6 @@ NavMeshSettings:
 Transform:
   m_PrefabParentObject: {fileID: 400064, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
   m_PrefabInternal: {fileID: 391685455}
---- !u!1 &164093162
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 164093163}
-  m_Layer: 0
-  m_Name: TestManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &164093163
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 164093162}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6613669, y: -1.4662777, z: 1.0741813}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179641771
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +156,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213292557
 GameObject:
@@ -498,7 +470,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_LocalScale.x
@@ -593,7 +565,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Orchestra
+  m_text: Trumpet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
@@ -660,7 +632,7 @@ MonoBehaviour:
   m_margin: {x: -0.28058696, y: 0, z: 17.984837, w: 4.3005776}
   m_textInfo:
     textComponent: {fileID: 242586884}
-    characterCount: 9
+    characterCount: 7
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -741,6 +713,7 @@ GameObject:
   - component: {fileID: 259558207}
   - component: {fileID: 259558208}
   - component: {fileID: 259558209}
+  - component: {fileID: 259558210}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -759,7 +732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &259558208
 MonoBehaviour:
@@ -772,19 +745,219 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ecdb713c1884ae4bbdc4586966591b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Guitar_clips:
-  - {fileID: 8300000, guid: 560ca95f1a9a7654bb3a7a02890e5cbe, type: 3}
-  - {fileID: 8300000, guid: 403d31843ea5f2a428b135318f5c29ff, type: 3}
-  Piano_clips:
-  - {fileID: 8300000, guid: 13c3a1f2dca5313409708722c985d820, type: 3}
-  - {fileID: 8300000, guid: ebc318717abd572448b8523b561f47ef, type: 3}
-  Orchestra_clips:
-  - {fileID: 8300000, guid: 7200ed01d84188a4596740259af20cec, type: 3}
-  - {fileID: 8300000, guid: ff5d2672bfce0db4dbfc07a422287b6e, type: 3}
-  Violin_clips:
-  - {fileID: 8300000, guid: bcc2f32800896b947a5667b9a2789af1, type: 3}
-  - {fileID: 8300000, guid: 9e718a5f521bdf24ab0216593907a01b, type: 3}
+  songlist:
+  - name: Song1
+    Chap0:
+    - {fileID: 8300000, guid: 9245d870cb670cd4b88968c9d4434863, type: 3}
+    - {fileID: 8300000, guid: e71fbf5c21e515e42bae568a733eac29, type: 3}
+    - {fileID: 8300000, guid: 3c8350904656de44f8f37d04ab3bb361, type: 3}
+    - {fileID: 8300000, guid: 86e0c7a2c6ef825498f0aac65d10f06f, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: 98aeef4dac935dc4f8c2a5d251d8d5ed, type: 3}
+    - {fileID: 8300000, guid: 9dee34bfe4a35994b96dedc9c675e017, type: 3}
+    - {fileID: 8300000, guid: 2fcf3b9f4dbdc3b419b53d73129db5e9, type: 3}
+    - {fileID: 8300000, guid: 19dbb9290df194d449a5dd842549359d, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: 6bea88a840ad94f4398aba280e9ee36d, type: 3}
+    - {fileID: 8300000, guid: 2f1ec2559b89a4f4799d7e6a40d4675e, type: 3}
+    - {fileID: 8300000, guid: dc6f943b3a4ef204b8c1b2bd5f88e711, type: 3}
+    - {fileID: 8300000, guid: 9a1bca02fdbf3454fac85a849ee643ba, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: 5db86a8a98767834fb880393fc44f8e6, type: 3}
+    - {fileID: 8300000, guid: be59f27c4f4412d48802b50c384cbd59, type: 3}
+    - {fileID: 8300000, guid: 186655c56d436744ca24b35c86321752, type: 3}
+    - {fileID: 8300000, guid: 2f06ad10fb7a86349bce89ca567b599b, type: 3}
+  - name: Song2
+    Chap0:
+    - {fileID: 8300000, guid: e822020301ba35d4f9634ef551bf5f21, type: 3}
+    - {fileID: 8300000, guid: d36a4d9b2b9543a4085da467fe052451, type: 3}
+    - {fileID: 8300000, guid: 672d2e0037fbbed4d8026388b6d55eb8, type: 3}
+    - {fileID: 8300000, guid: b301e47fbcf4d014c8cc7b3b30b9a85c, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: df6ff863dda1a014b913c37d56cae39e, type: 3}
+    - {fileID: 8300000, guid: 9ed109e78247af547ac74b124a94147f, type: 3}
+    - {fileID: 8300000, guid: 8dbeefbfbcbe5f74d86c2afacd690e1a, type: 3}
+    - {fileID: 8300000, guid: 39320aa596fd58a4693ec70e853957a9, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: 4374cf05e335cd747babcfaaac0d8e29, type: 3}
+    - {fileID: 8300000, guid: 1f89a7d2fdc428f4a8032ed67b094f62, type: 3}
+    - {fileID: 8300000, guid: f2b9af0930e23cb40b888d2e4df81d4b, type: 3}
+    - {fileID: 8300000, guid: 27c152478b90dfa40827389a47e0409d, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: c5ef9ad25f1d8984aaf650632760ef3b, type: 3}
+    - {fileID: 8300000, guid: 09f2ba90242c6a741ae57ae50baf0073, type: 3}
+    - {fileID: 8300000, guid: bf877bcca1c88894f9e0d23a977d5348, type: 3}
+    - {fileID: 8300000, guid: d273e4321cff65d4081fac269e4a7626, type: 3}
+  - name: Song3
+    Chap0:
+    - {fileID: 8300000, guid: 718cbcf44bbf6a147b6e8e0e051a3dca, type: 3}
+    - {fileID: 8300000, guid: 691ba8954fb641c49960e16bf2d2043a, type: 3}
+    - {fileID: 8300000, guid: b8c3cedff93525e43aa64f32e0303380, type: 3}
+    - {fileID: 8300000, guid: df299c1e8d5ac914392be1e0e2dcdeaf, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: 155326b6f2592b04390835219030e3df, type: 3}
+    - {fileID: 8300000, guid: bca7645ca15ebb8469460821f8226d5c, type: 3}
+    - {fileID: 8300000, guid: 58cbbf9f8869fe24e815562e406cc5d2, type: 3}
+    - {fileID: 8300000, guid: 66e024d5af51df047b58e3db84b85b85, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: 28cf7497c7e2dab45a53f02fe0693146, type: 3}
+    - {fileID: 8300000, guid: 38062f7e98bc85d4baf3886d3f751bc2, type: 3}
+    - {fileID: 8300000, guid: cbc7cbb3aa9021c4cab854724fd2ef88, type: 3}
+    - {fileID: 8300000, guid: c05e149b3df466849ba31ea4c6dec2c9, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: cb21f2ba9760d7c4ca3a4630a4301b25, type: 3}
+    - {fileID: 8300000, guid: c9673f3f0391240439e482e8affd6586, type: 3}
+    - {fileID: 8300000, guid: cd71b182833ac9a49a1b354aed8c0e6d, type: 3}
+    - {fileID: 8300000, guid: ccf2ee68c357aee42a05be4b3e263750, type: 3}
+  - name: Song4
+    Chap0:
+    - {fileID: 8300000, guid: 88128cf2381b1444e874d50c169b1cf4, type: 3}
+    - {fileID: 8300000, guid: df78fef804dcc8940b08a3da0cebabea, type: 3}
+    - {fileID: 8300000, guid: 8c5119193bb602b46b6600fa514776bd, type: 3}
+    - {fileID: 8300000, guid: 2ed08fc30f9019344ab643e0c097ba58, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: 0e91b1f26b2918e4984846dcc4ad297d, type: 3}
+    - {fileID: 8300000, guid: 02bb9821fd814ed409fef6f3e5062ea7, type: 3}
+    - {fileID: 8300000, guid: 30a4474b4abe28f4e87e50b8d5197f7a, type: 3}
+    - {fileID: 8300000, guid: 915b0ce6bc0e3c842b824159032c3d1b, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: e8f574f0668b9534f8f51f3fc798f97e, type: 3}
+    - {fileID: 8300000, guid: 61ecf0865813bfd48be873bd696c118d, type: 3}
+    - {fileID: 8300000, guid: 0333b9d5b9216344caa3f57a18b4d4c1, type: 3}
+    - {fileID: 8300000, guid: 8abd083cc51c8ae4bb1e1627fa738ac1, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: 3b50aef1acc9b7f48ae2d7f0ad6baea2, type: 3}
+    - {fileID: 8300000, guid: 394f743ab6b008b4cba3f1bb02f975e0, type: 3}
+    - {fileID: 8300000, guid: 7e192f18b92bce543834d28133edc9b5, type: 3}
+    - {fileID: 8300000, guid: c181ec629b5d1484ab9049693d39e152, type: 3}
+  - name: Song5
+    Chap0:
+    - {fileID: 8300000, guid: 5bcacfaf982a91543b3ce3803622c58f, type: 3}
+    - {fileID: 8300000, guid: 80f5b7de5aafafa49bddcd1cb66f504b, type: 3}
+    - {fileID: 8300000, guid: d5bc39ebf170b5143991fbbcfd753dc7, type: 3}
+    - {fileID: 8300000, guid: 875369c69ddf91f439979ce2809ec87c, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: 0857cef4687e511479fba0686204de41, type: 3}
+    - {fileID: 8300000, guid: 714639a04d77b4342b07243e85af72a2, type: 3}
+    - {fileID: 8300000, guid: 43b73328462a1c545b28612c100f5b40, type: 3}
+    - {fileID: 8300000, guid: 3fd6e95cb13887f49bddce50e91da918, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: 385edbf16d535ca4aaa4562e30d5cd0f, type: 3}
+    - {fileID: 8300000, guid: 678533a72acd54c4bae428ff250a0255, type: 3}
+    - {fileID: 8300000, guid: e8334e48192e0794c921690458229af5, type: 3}
+    - {fileID: 8300000, guid: 3024212386196ce4f811f3eaa3ac8de8, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: 02c5a91c3171cda4bb16a728ee4a1acb, type: 3}
+    - {fileID: 8300000, guid: 78d657224b0813745917a3285a3997b9, type: 3}
+    - {fileID: 8300000, guid: 3a34a3253a1d750438b5c5221d7093a0, type: 3}
+    - {fileID: 8300000, guid: e2ee1e12cfa373d4f81dbcf25d6125cb, type: 3}
+  - name: Song6
+    Chap0:
+    - {fileID: 8300000, guid: 74074818e551046448d29cda7d15459a, type: 3}
+    - {fileID: 8300000, guid: b36f78b77f028c24baf71d720fe66fec, type: 3}
+    - {fileID: 8300000, guid: da86f3fcb0853ce478b94cf4a9adb47f, type: 3}
+    - {fileID: 8300000, guid: 44e043b9f6f21a146a96097e2636ca13, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: 1b38981c147f04941819ea0ceaccfbcd, type: 3}
+    - {fileID: 8300000, guid: 6e73f806e33c5264db2d19d2307401a8, type: 3}
+    - {fileID: 8300000, guid: b76239cc617c7274aa6cbc4c92effff5, type: 3}
+    - {fileID: 8300000, guid: 624761c49fcf9b1439571a21ec0d7c30, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: 5bead04d5c9c7274080f5bca50c9de8c, type: 3}
+    - {fileID: 8300000, guid: b3ac1964ae127184b9724f18fb06583b, type: 3}
+    - {fileID: 8300000, guid: 02e97a3c98f414b4ba5a824be951b550, type: 3}
+    - {fileID: 8300000, guid: 3011e7a144f41564c9839744e397755c, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: a633e5eb7a172ec448841fc1241ff75c, type: 3}
+    - {fileID: 8300000, guid: 4f40f71239a29af4fa35c0b4c8dc7d1d, type: 3}
+    - {fileID: 8300000, guid: 2a4044a3ae2cb974699cf41248965647, type: 3}
+    - {fileID: 8300000, guid: 95d5c792238580046ac9573df401daff, type: 3}
+  - name: Song7
+    Chap0:
+    - {fileID: 8300000, guid: aad6d8f2c5793044c81dbe6333aa2b08, type: 3}
+    - {fileID: 8300000, guid: 77f1cb36e01027c4a9b3db2551e08192, type: 3}
+    - {fileID: 8300000, guid: 8759939c69e0b154aa8ff48b00766685, type: 3}
+    - {fileID: 8300000, guid: e4bfeefdaab4efd42ab4641d2a8ba323, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: 40cd4f4c05e2bd941947e86a6e780f6c, type: 3}
+    - {fileID: 8300000, guid: 54d13774ae57ffb49a3408986983944b, type: 3}
+    - {fileID: 8300000, guid: c9faa67611f59554287b9e748fd17a1b, type: 3}
+    - {fileID: 8300000, guid: c8268bbf6560d9d489fdc23c1a79dbd5, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: 13b07451aca0ec74586013b40fdbce95, type: 3}
+    - {fileID: 8300000, guid: 3b77066887228e94e8be3189121e4dd9, type: 3}
+    - {fileID: 8300000, guid: 836d10b2c56b6db4394c0e92df861292, type: 3}
+    - {fileID: 8300000, guid: 3eb3b138ef318db439135131a4a49b54, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: e11c2e4c10a72a34cb74db62085fb79b, type: 3}
+    - {fileID: 8300000, guid: 37aaae24ab3fcd34ea944cb8e50ed7b1, type: 3}
+    - {fileID: 8300000, guid: 41c00cf6291163047841c1da2a0e1ab9, type: 3}
+    - {fileID: 8300000, guid: 9cc93cbc49ddc6347b280d846fa34c50, type: 3}
+  - name: Song8
+    Chap0:
+    - {fileID: 8300000, guid: d36981e15c4215a4e86cbe920550389b, type: 3}
+    - {fileID: 8300000, guid: 0d6bbf228db9c2741abcf1ca8c9862c1, type: 3}
+    - {fileID: 8300000, guid: a78f0dddc14cde047b54f106dcfb0b29, type: 3}
+    - {fileID: 8300000, guid: e24c253948a54014fbcb15368ef73927, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: 2e9ac4a82ce70c4479a491e7fd2b97bf, type: 3}
+    - {fileID: 8300000, guid: f1635f0f081c1bc47be8ebaad0a151f9, type: 3}
+    - {fileID: 8300000, guid: 85592b2fc7c9c8340acee2a01c38ae6c, type: 3}
+    - {fileID: 8300000, guid: 8616c47d581301d4b92ec8342f1ea969, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: 3a96a2b3c4666f847bfc805dd4abab45, type: 3}
+    - {fileID: 8300000, guid: 71e155625bb351b4bb836e3c08165d20, type: 3}
+    - {fileID: 8300000, guid: e2417cecdd20d3e4595bd6deaef7d54d, type: 3}
+    - {fileID: 8300000, guid: 72fd574e9c9899147a85a98ba39624a4, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: bcedb8ec694a80f4495f7f8650c144f5, type: 3}
+    - {fileID: 8300000, guid: 78f5c589fdcaca44f892fd4017d51f0d, type: 3}
+    - {fileID: 8300000, guid: d88fbc084fc3bdb49b6a2916b547d8b7, type: 3}
+    - {fileID: 8300000, guid: 83132249886a8884ab0a721f2b6c5f7c, type: 3}
+  - name: Song9
+    Chap0:
+    - {fileID: 8300000, guid: 0562acff278c3e84da349b13a33ca626, type: 3}
+    - {fileID: 8300000, guid: 8684d755075db4145b73d8f4b55e8080, type: 3}
+    - {fileID: 8300000, guid: 3198ab8811917564fa7777611a51a01c, type: 3}
+    - {fileID: 8300000, guid: c6f1df481ea18f347b9642e744c4d951, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: 01d179374f755ba4192c1ed34e1fa011, type: 3}
+    - {fileID: 8300000, guid: 33c9213a12b2b21478d0b580f257c4d2, type: 3}
+    - {fileID: 8300000, guid: 7316d35517007c641977d1335d1736b3, type: 3}
+    - {fileID: 8300000, guid: 5ebc236daa417114793f14bebd6472a5, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: 6aef076a6a50c7c47bfbbad16bc787b5, type: 3}
+    - {fileID: 8300000, guid: a735be014e628f141bff053ca69c8672, type: 3}
+    - {fileID: 8300000, guid: be9afa7883b0e0d4aabbeb9ee4ba654f, type: 3}
+    - {fileID: 8300000, guid: f88977e437b033c4b8e56b0b8b84ae6f, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: a8648040e034b0240b288a98959ac3be, type: 3}
+    - {fileID: 8300000, guid: 7440ec6841618d1479974fd3f2262690, type: 3}
+    - {fileID: 8300000, guid: f49110964e761784ea502036dc0d2121, type: 3}
+    - {fileID: 8300000, guid: dc637df424acf014ba61c2fb9c426bcf, type: 3}
+  - name: Song10
+    Chap0:
+    - {fileID: 8300000, guid: d92e666891faa6b4889fb1afe60cb7ec, type: 3}
+    - {fileID: 8300000, guid: 0e71cf57052caf8449466cd874b78aa8, type: 3}
+    - {fileID: 8300000, guid: 5eb869516665ce04ab5c559d5fdbc0b2, type: 3}
+    - {fileID: 8300000, guid: 5c80ca942f19ca74fa538accfca367b3, type: 3}
+    Chap1:
+    - {fileID: 8300000, guid: d0034451ea1c6244995e088341bc4992, type: 3}
+    - {fileID: 8300000, guid: 33a65950af67c6d4bb0a4dc6a8aeba13, type: 3}
+    - {fileID: 8300000, guid: 1852e861395343c469041bf49c211c5d, type: 3}
+    - {fileID: 8300000, guid: 591d412411d31714e9e9b3f76ad1f8dd, type: 3}
+    Chap2:
+    - {fileID: 8300000, guid: 4801ff209f24fea4cadc0728cda6dc7e, type: 3}
+    - {fileID: 8300000, guid: 942a749a493c30d4e85d69b680911a61, type: 3}
+    - {fileID: 8300000, guid: 86ffc362b48667a4a90c637f367504de, type: 3}
+    - {fileID: 8300000, guid: a82a5d20a0eb84f4bb9ed8e2cd7e611b, type: 3}
+    Chap3:
+    - {fileID: 8300000, guid: 58f1c9abf7681d34a8a82587d3a94a51, type: 3}
+    - {fileID: 8300000, guid: 705f04ca0f4978541aefbf7771cfad5d, type: 3}
+    - {fileID: 8300000, guid: c98cd144480ff3c49914a9e18934d9ed, type: 3}
+    - {fileID: 8300000, guid: c63f520fc2f6d50439c5fc9a7f539751, type: 3}
   SequenceLength: 4
+  Song_id: 0
 --- !u!82 &259558209
 AudioSource:
   m_ObjectHideFlags: 0
@@ -865,6 +1038,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &259558210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 259558206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9447788dd315ea447bc7f14354d62399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cube_man: {fileID: 301187813}
 --- !u!4 &284035585 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400124, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
@@ -940,15 +1125,131 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100036, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
       propertyPath: moveRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400036, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400036, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400036, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300006, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300040, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300048, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300022, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300038, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300020, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300010, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300028, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300036, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300032, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300014, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300034, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300018, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300016, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300024, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300012, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300026, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300046, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300030, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300042, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300044, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &301187813 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100036, guid: ed1c50b3cebc9374f9da79ca55dd4e4b, type: 2}
+  m_PrefabInternal: {fileID: 301187812}
 --- !u!1 &311239988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1344,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_LocalScale.x
@@ -1443,7 +1744,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_LocalScale.x
@@ -1537,6 +1838,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &624242591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624242587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02062e4c48096cf41ab029c68dc2a5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &624242592
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1552,17 +1864,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &624242593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 624242587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8046e3ba162f04d88b7d8090f15814, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &659385094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2365,7 @@ RectTransform:
   - {fileID: 213292558}
   - {fileID: 242586883}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2295,7 +2596,7 @@ RectTransform:
   m_Children:
   - {fileID: 596818338}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2472,7 +2773,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1892069092
 Prefab:
@@ -2511,7 +2812,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_LocalScale.x
@@ -2889,7 +3190,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 487078, guid: 9249acaf33cfa5a4caf99e6f85c20a90, type: 2}
       propertyPath: m_LocalScale.x

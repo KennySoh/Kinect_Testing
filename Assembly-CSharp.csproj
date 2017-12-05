@@ -175,8 +175,13 @@
      <Compile Include="Assets\KinectScripts\Utilities\AsyncTask.cs" />
      <Compile Include="Assets\KinectScripts\VisualGestureManager.cs" />
      <Compile Include="Assets\scripts\Flag_Check.cs" />
+     <Compile Include="Assets\scripts\GameManager.cs" />
      <Compile Include="Assets\scripts\Gesture_control.cs" />
      <Compile Include="Assets\scripts\Gesture_control2.cs" />
+     <Compile Include="Assets\scripts\Gesture_tst.cs" />
+     <Compile Include="Assets\scripts\Guitar_Box.cs" />
+     <Compile Include="Assets\scripts\Orch_Box.cs" />
+     <Compile Include="Assets\scripts\Piano_Box.cs" />
      <Compile Include="Assets\scripts\SongManager.cs" />
      <Compile Include="Assets\scripts\Start_Box.cs" />
      <Compile Include="Assets\scripts\Violin_Box.cs" />

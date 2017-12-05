@@ -1,0 +1,30 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Guitar_Box : MonoBehaviour {
+	public static bool start_checking;
+
+	void Start(){
+		start_checking = false;
+	}
+
+	void Update(){
+	}
+
+	void OnTriggerEnter(Collider col) {
+		if(col.tag=="rfh" && start_checking==true){
+			print ("Enter Guitar Box");
+		}
+	}
+
+	void OnTriggerExit(Collider col) {
+		if (col.tag == "rfh" && start_checking == true) {
+			print ("Exit Guitar Box, Guitar Registered");
+			GameManager.user_input_sequence = GameManager.user_input_sequence + "G";
+		}
+	}
+}
+

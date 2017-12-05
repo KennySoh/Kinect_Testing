@@ -5,27 +5,25 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Violin_Box : MonoBehaviour {
-	private Stopwatch timer;
+	public static bool start_checking;
 
 	void Start(){
-		timer = new Stopwatch ();
+		start_checking = false;
 	}
 
 	void Update(){
-		//if(timer.)
 	}
 
 	void OnTriggerEnter(Collider col) {
-		if(col.tag=="rfh"){
-			timer.Start ();
-			print ("Enter Violin");
+		if(col.tag=="rfh" && start_checking==true){
+			print ("Enter Violin Box");
 		}
 	}
 
 	void OnTriggerExit(Collider col) {
-		if(col.tag=="rfh"){
-			timer.Stop ();
-			print ("Exit Violin");
+		if (col.tag == "rfh" && start_checking == true) {
+			print ("Exit Violin Box, Violin Registered");
+			GameManager.user_input_sequence = GameManager.user_input_sequence + "V";
 		}
 	}
 }

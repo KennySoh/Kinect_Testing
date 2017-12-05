@@ -2,11 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
+public class Song_R{
+	public string name;
+	public AudioClip[] Chap0;
+	public AudioClip[] Chap1;
+	public AudioClip[] Chap2;
+	public AudioClip[] Chap3;
+}
+
+
+
 public class SongManager : MonoBehaviour {
-	public AudioClip[] Guitar_clips;
-	public AudioClip[] Piano_clips;
-	public AudioClip[] Orchestra_clips;
-	public AudioClip[] Violin_clips;
+	public Song_R[] songlist;
+	//public AudioClip[] Guitar_clips;
+	//public AudioClip[] Piano_clips;
+	//public AudioClip[] Trumpet_clips;
+	//public AudioClip[] Violin_clips;
 	public int SequenceLength;
 	private AudioSource audioSource;
 	private bool playNow = false;
@@ -14,10 +27,19 @@ public class SongManager : MonoBehaviour {
 	private int cnt = 0;
 	private static string[] current_sequence;
 	public static List<string> Rcvlist;
+	public static bool start_game;
+	public int Song_id;
+	 
+
 
 
 	private AudioClip RandomSelector(AudioClip[] clips){
 		return clips [Random.Range (0, clips.Length)];
+	}
+
+	private int Song_Index_Random_Generator(){
+		int my_s_id = Random.Range (0, songlist.Length);
+		return my_s_id;
 	}
 
 	private string[] Gen_song_sequence(){
@@ -40,21 +62,78 @@ public class SongManager : MonoBehaviour {
 		for (int i = 0; i < working_sequence.Length; i++) {
 			string p = working_sequence [i];
 			if (p == "G") {
-				AudioClip slcted_guitar_clip = RandomSelector (Guitar_clips);
-				return_songlist [i] = slcted_guitar_clip;
+				if (i == 0) {
+					AudioClip slcted_guitar_clip = songlist[Song_id].Chap0[2];
+					return_songlist [i] = slcted_guitar_clip;
+				}
+				if (i == 1) {
+					AudioClip slcted_guitar_clip = songlist[Song_id].Chap1[2];
+					return_songlist [i] = slcted_guitar_clip;
+				}
+				if (i == 2) {
+					AudioClip slcted_guitar_clip = songlist[Song_id].Chap2[2];
+					return_songlist [i] = slcted_guitar_clip;
+				}
+				if (i == 3) {
+					AudioClip slcted_guitar_clip = songlist[Song_id].Chap3[2];
+					return_songlist [i] = slcted_guitar_clip;
+				}
 			} 
 			else if (p == "V") {
-				AudioClip slcted_violin_clip = RandomSelector(Violin_clips);
-				return_songlist [i] = slcted_violin_clip;
+				if (i == 0) {
+					AudioClip slcted_violin_clip = songlist[Song_id].Chap0[1];
+					return_songlist [i] = slcted_violin_clip;
+				}
+				if (i == 1) {
+					AudioClip slcted_violin_clip = songlist[Song_id].Chap1[1];
+					return_songlist [i] = slcted_violin_clip;
+				}
+				if (i == 2) {
+					AudioClip slcted_violin_clip = songlist[Song_id].Chap2[1];
+					return_songlist [i] = slcted_violin_clip;
+				}
+				if (i == 3) {
+					AudioClip slcted_violin_clip = songlist[Song_id].Chap3[1];
+					return_songlist [i] = slcted_violin_clip;
+				}
 			} 
 			else if (p == "O") {
-				AudioClip slcted_orchestra_clip = RandomSelector(Orchestra_clips);
-				return_songlist [i] = slcted_orchestra_clip;
+				if (i == 0) {
+					AudioClip slcted_trumpet_clip = songlist[Song_id].Chap0[3];
+					return_songlist [i] = slcted_trumpet_clip;
+				}
+				if (i == 1) {
+					AudioClip slcted_trumpet_clip = songlist[Song_id].Chap1[3];
+					return_songlist [i] = slcted_trumpet_clip;
+				}
+				if (i == 2) {
+					AudioClip slcted_trumpet_clip = songlist[Song_id].Chap2[3];
+					return_songlist [i] = slcted_trumpet_clip;
+				}
+				if (i == 3) {
+					AudioClip slcted_trumpet_clip = songlist[Song_id].Chap3[3];
+					return_songlist [i] = slcted_trumpet_clip;
+				}
 			} 
 			else if (p == "P") {
-				AudioClip slcted_piano_clip = RandomSelector(Piano_clips);
-				return_songlist [i] = slcted_piano_clip;
+				if (i == 0) {
+					AudioClip slcted_piano_clip = songlist[Song_id].Chap0[0];
+					return_songlist [i] = slcted_piano_clip;
+				}
+				if (i == 1) {
+					AudioClip slcted_piano_clip = songlist[Song_id].Chap1[0];
+					return_songlist [i] = slcted_piano_clip;
+				}
+				if (i == 2) {
+					AudioClip slcted_piano_clip = songlist[Song_id].Chap2[0];
+					return_songlist [i] = slcted_piano_clip;
+				}
+				if (i == 3) {
+					AudioClip slcted_piano_clip = songlist[Song_id].Chap3[0];
+					return_songlist [i] = slcted_piano_clip;
+				}
 			}
+			//AudioClip slcted_piano_clip = RandomSelector(Piano_clips);return_songlist [i] = slcted_piano_clip;
 		}
 		return return_songlist;
 	}
@@ -96,6 +175,7 @@ public class SongManager : MonoBehaviour {
 	}
 
 	void Start () {
+		start_game = false;
 		recordNow = false;
 		audioSource = FindObjectOfType<AudioSource> ();
 		audioSource.loop = false;
@@ -104,16 +184,25 @@ public class SongManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Key in space to gen song sequence
-		if (Input.GetKeyDown ("space")) {
+		if (Input.GetKeyDown("space")||start_game==true) {
+			Song_id = Song_Index_Random_Generator (); //Generate Song Index
 			current_sequence = Gen_song_sequence ();
 			playNow = true;
 			string songseq = string.Join ("", current_sequence);
 			print ("Song Sequence: "+songseq);
+			GameManager.song_sequence = songseq;
 		}
 		if (playNow) {
 			PlaySequence ();
 		}
 		if (recordNow) {
+			if (!audioSource.isPlaying) {
+				print ("Playlist finished!");
+			}
+			recordNow = false;
+		}
+		if (start_game == true) {
+			start_game = false;
 		}
 	}
 }
