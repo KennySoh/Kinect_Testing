@@ -1,8 +1,7 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Gesture_tst.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\KinectScripts\Cubeman\CubemanController.cs">
     <Files>
-      <File FileName="Assets\scripts\Gesture_tst.cs" Line="182" Column="12" />
       <File FileName="Assets\scripts\SongManager.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Start_Box.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\GameManager.cs" Line="1" Column="1" />
@@ -15,6 +14,9 @@
       <File FileName="Assets\KinectScripts\AvatarControllerClassic.cs" Line="1" Column="1" />
       <File FileName="Assets\KinectScripts\KinectGestures.cs" Line="1" Column="1" />
       <File FileName="Assets\KinectScripts\KinectManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Gesture_tst.cs" Line="1" Column="1" />
+      <File FileName="Assets\ProgressBar\Script\ProgressBarBehaviour.cs" Line="200" Column="29" />
+      <File FileName="Assets\KinectScripts\Cubeman\CubemanController.cs" Line="135" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

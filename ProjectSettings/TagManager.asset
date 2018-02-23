@@ -14,6 +14,7 @@ TagManager:
   - Drum_box
   - lfh
   - rfh
+  - tst_tag2
   layers:
   - Default
   - TransparentFX

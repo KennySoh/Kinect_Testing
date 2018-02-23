@@ -196,9 +196,11 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\Resources\Color2DepthShader.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\readme.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Resources\BlurShader2.shader" />
      <None Include="Assets\UnityChan\license.txt" />
+     <None Include="Assets\README_SD_KohakuChanz.txt" />
      <None Include="Assets\KinectDemos\BackgroundRemovalDemo\Resources\ForegroundBlendShader.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\Resources\Color2DepthShaderInv.shader" />

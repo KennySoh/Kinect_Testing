@@ -144,7 +144,7 @@ public class CubemanController : MonoBehaviour
 			for(int i = 0; i < bones.Length; i++) 
 			{
 				bones[i].gameObject.SetActive(true);
-
+				//bones[i].gameObject.SetActive(false);
 				bones[i].transform.localPosition = Vector3.zero;
 				bones[i].transform.localRotation = Quaternion.identity;
 				
@@ -187,6 +187,7 @@ public class CubemanController : MonoBehaviour
 				if(manager.IsJointTracked(userID, joint))
 				{
 					bones[i].gameObject.SetActive(true);
+					//bones[i].gameObject.SetActive(false);
 					
 					Vector3 posJoint = manager.GetJointPosition(userID, joint);
 					posJoint.z = !mirroredMovement ? -posJoint.z : posJoint.z;
@@ -213,7 +214,8 @@ public class CubemanController : MonoBehaviour
 
 					if(lines[i] != null)
 					{
-						lines[i].gameObject.SetActive(true);
+						//lines[i].gameObject.SetActive(true);
+						lines[i].gameObject.SetActive(false);
 						Vector3 posJoint2 = bones[i].transform.position;
 						
 						Vector3 dirFromParent = manager.GetJointDirection(userID, joint, false, false);
