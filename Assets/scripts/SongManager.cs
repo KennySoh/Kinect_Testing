@@ -25,10 +25,12 @@ public class SongManager : MonoBehaviour {
 	private bool playNow = false;
 	private bool recordNow = false;
 	private int cnt = 0;
-	private static string[] current_sequence;
+	public static string[] current_sequence;
+	public static string current_instrument;
 	public static List<string> Rcvlist;
 	public static bool start_game;
 	public int Song_id;
+	public static string round_flag = "";
 	 
 
 
@@ -43,10 +45,17 @@ public class SongManager : MonoBehaviour {
 	}
 
 	private string[] Gen_song_sequence(){
+		// No two time a roll
+		// At least 3 instruments
 		string[] pickup_bucket = new string[] { "G", "V", "O", "P" };
 		string[] return_sequence = new string[SequenceLength];
+		string previous_out = "";
 		for (int i = 0; i < pickup_bucket.Length; i++){
-			string currentout = pickup_bucket [Random.Range (0, pickup_bucket.Length)];
+			string currentout = pickup_bucket [Random.Range (0, pickup_bucket.Length)]; // Struct here
+			while (previous_out == currentout){
+				currentout = pickup_bucket [Random.Range (0, pickup_bucket.Length)];
+			}
+			previous_out = currentout;
 			return_sequence [i] = currentout;
 		}
 		current_sequence = return_sequence;
@@ -161,6 +170,8 @@ public class SongManager : MonoBehaviour {
 
 		if (!audioSource.isPlaying && cnt < playlist.Length) {
 			audioSource.clip = playlist [cnt];
+			current_instrument = current_sequence [cnt];
+			print ("Currently playing: "+current_instrument);
 			audioSource.Play ();
 			cnt++;
 		}
@@ -168,6 +179,7 @@ public class SongManager : MonoBehaviour {
 			cnt = 0;
 			playNow = false;
 			recordNow = true;
+			round_flag = "last song";
 		}
 		if (audioSource.volume <= 0.1) {
 			fadeIn ();
@@ -183,8 +195,15 @@ public class SongManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!audioSource.isPlaying) {
+			current_instrument = "Nothing";
+			if (round_flag == "last song") {
+				round_flag = "time for input";
+			}
+		}
 		//Key in space to gen song sequence
 		if (Input.GetKeyDown("space")||start_game==true) {
+			Img_Control.oneshot_flag = new bool[] {true, true, true, true};
 			Song_id = Song_Index_Random_Generator (); //Generate Song Index
 			current_sequence = Gen_song_sequence ();
 			playNow = true;

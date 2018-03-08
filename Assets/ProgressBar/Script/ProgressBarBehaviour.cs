@@ -1,6 +1,7 @@
 ﻿using ProgressBar.Utils;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 namespace ProgressBar
 {
@@ -116,6 +117,20 @@ namespace ProgressBar
             m_Value = new ProgressValue(0, FillerInfo.MaxWidth);
         }
 
+		public static string progress_bar_signal = "No Progress Bar";
+
+		void Detect_and_React(){
+			string round_f = SongManager.round_flag;
+			if (round_f == "time for input") {
+				SongManager.round_flag = "";
+				progress_bar_signal = "Progressing Bar 1";
+			}
+			if (progress_bar_signal == "Progressing Bar 1") {
+				IncrementValue (1);
+			}
+
+		}
+
         void Update()
         {
             //If theses two values aren't equals this means m_Value has been updated and the animation needs to start.
@@ -159,6 +174,7 @@ namespace ProgressBar
                 //      We trigger the selected method(s).
                 if (TriggerOnComplete && isPaused && isDone) OnComplete();
             }
+			Detect_and_React ();
         }
 
         /// <summary>
@@ -190,6 +206,9 @@ namespace ProgressBar
         /// </summary>
         public void OnComplete()
         {
+			print ("Bar 1 Completed");
+			progress_bar_signal = "Bar 1 Completed";
+			StartCoroutine (Waiter());
             OnCompleteMethods.Invoke();
         }
         
@@ -214,5 +233,9 @@ namespace ProgressBar
 
             if (Value < 0) Value = 0;
         }
+
+		IEnumerator Waiter(){
+			yield return new WaitForSeconds(30);
+		}
     }
 }
